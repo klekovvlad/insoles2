@@ -111,6 +111,9 @@ h3 {
             }
         }
     }
+    &__mob {
+        display: none;
+    }
     &__phone {
         min-height: 100%;
         display: flex;
@@ -574,7 +577,107 @@ h3 {
     }
 }
 
-
+.popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s all linear;
+    &__body {
+        background: #fff;
+        min-width: 650px;
+        max-width: 650px;
+        padding: 50px;
+        border-radius: 10px;
+        background: @green;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: 1001;
+        h3 {
+            font-size: 1.875em;
+            margin-bottom: 10px;
+            span.yellow {
+                .bold();
+            }
+        }
+        h4 {
+            font-size: 1.5em;
+            margin-bottom: 50px;
+        }
+    }
+    form {
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        input {
+            color: @black;
+            display: flex;
+            align-items: center;
+            width: 360px;
+            height: 60px;
+            border-radius: 10px;
+            padding: 0px 30px;
+            border: none;
+            outline: none;
+            margin-bottom: 30px;
+        }
+        .main-btn {
+            margin-top: 30px;
+        }
+        span.agree {
+            display: block;
+            position: relative;
+            padding-left: 30px;
+        }
+        span.agree:before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: url(../img/icons/agree.svg) no-repeat center;
+            background-size: cover;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    }
+    &__close {
+        width: 60px;
+        height: 60px;
+        position: fixed;
+        top: 50px;
+        right: 50px;
+        z-index: 1001;
+        cursor: pointer;
+        span {
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: #fff;
+            margin: 20px 0px;
+        }
+        span:nth-child(1) {
+            transform: translateY(11px) rotate(45deg);
+        }
+        span:nth-child(2) {
+            transform: translateY(-11px) rotate(-45deg);
+        }
+    }
+}
+.popup-show {
+    visibility: visible;
+    opacity: 1.0;
+}
 
 
 
@@ -590,9 +693,10 @@ h3 {
     }
     
     .header {
+        overflow: hidden;
         &__wrapper {
             padding: 20px 0px;
-            grid-template-columns: 50% 25% 25%;
+            grid-template-columns: 83% 17%;
         }
         &__logo{
             h3 {
@@ -619,27 +723,30 @@ h3 {
             }
         }
         &__phone {
-            
             min-height: 100%;
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            display: none;
             a.phone {
-                .bold();
-                font-size: 1.25em;
+                display: block;
+                width: 40px;
+                height: 40px;
+                font-size: 0;
+                background: url(../img/icons/phone.svg) no-repeat center;
+                background-size: cover;
             }
         }
     }
     
     .header__scroll {
-        background: rgba(31, 97, 52, 0.7);;
+        background: rgba(31, 97, 52, 0.9);;
         .header__wrapper {
             padding: 10px 0px;
         }
     }
     
     .main {
+        overflow: hidden;
         padding: 150px 0px 50px 0px;
         h1 {
             text-align: left;
@@ -757,6 +864,7 @@ h3 {
     }
     
     .adv {
+        overflow: hidden;
         &__wrapper {
             grid-template-columns: 1fr;
             padding-top: 0px;
@@ -786,6 +894,7 @@ h3 {
     }
     
     .for {
+        overflow: hidden;
         padding: 50px 0px;
         &__wrapper {
             grid-template-columns: repeat(2, 1fr);
@@ -800,6 +909,7 @@ h3 {
     }
     
     .about {
+        overflow: hidden;
         padding: 50px 0px;
         .swiper-wrapper {
             padding: 30px 0px 80px 0px;
@@ -807,6 +917,7 @@ h3 {
     }
     
     .offer {
+        overflow: hidden;
         &__text {
             flex: 0 1 100%;
             padding: 50px 0px;
@@ -831,6 +942,7 @@ h3 {
     }
     
     .photo, .feedback, .video {
+        overflow: hidden;
         padding: 50px 0px;
         &__wrapper {
             overflow: hidden;
@@ -861,6 +973,7 @@ h3 {
     }
     
     .contacts {
+        overflow: hidden;
         &__item {
             position: relative;
             top: 0%;
@@ -878,6 +991,7 @@ h3 {
     }
     
     .footer {
+        overflow: hidden;
         &__wrapper {
             justify-content: center;
             flex-direction: column;
@@ -886,5 +1000,50 @@ h3 {
             text-align: center;
             font-size: 1em;
         }
+    }
+
+    .popup {
+        &__body {
+            min-width: 95%;
+            max-width: 95%;
+            padding: 30px;
+            border-radius: 4px;
+            h3 {
+                font-size: 1.5em;
+                span.yellow {
+                    display: block;
+                }
+            }
+            h4 {
+                font-size: 1em;
+                margin-bottom: 30px;
+            }
+        }
+        form {
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-size: 1.125em;
+            }
+            input {
+                width: 100%;
+                height: 50px;
+                border-radius: 4px;
+                padding: 0px 20px;
+            }
+            .main-btn {
+                min-width: 100%;
+            }
+        }
+        &__close {
+            width: 50px;
+            height: 50px;
+            top: 80px;
+            right: 10px;
+        }
+    }
+    .popup-show {
+        visibility: visible;
+        opacity: 1.0;
     }
 }

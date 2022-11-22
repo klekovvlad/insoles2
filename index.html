@@ -48,7 +48,7 @@
                         <div class="main__img-content">
                             <span class="oldprice">6980 ₽</span>
                             <span class="price">3490 ₽</span>
-                            <button class="main-btn">Записаться по скидке</button>
+                            <button class="main-btn popup__show">Записаться по скидке</button>
                             <span class="offer">В подарок вторая пара за <span class="yellow">1500 ₽!</span></span>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
                     </div>
                 </div>
                 <div class="adv__btn">
-                    <button class="main-btn">Получить скидку</button>
+                    <button class="main-btn popup__show">Получить скидку</button>
                 </div>
                 <div class="adv__image">
                     <img src="img/adv-family.png" alt="">
@@ -111,62 +111,62 @@
     <section class="for">
         <div class="container">
             <h3><span class="green">Показания для применения</span> индивидуальных ортопедических стелек</h3>
-            <div class="for__wrapper">
+            <div class="for__wrapper popup__show">
                 <div class="for__item">
                     <h4>При пяточной боли</h4>
                     <div class="for__item-img">
                         <img src="img/for/product1.jpg" alt="">
                     </div>
                 </div>
-                <div class="for__item">
+                <div class="for__item popup__show">
                     <h4>При плосковальгусной деформации стопы</h4>
                     <div class="for__item-img">
                         <img src="img/for/product2.jpg" alt="">
                     </div>
                 </div>
-                <div class="for__item">
+                <div class="for__item popup__show">
                     <h4>При артрозе суставов в пяточном отделе стопы</h4>
                     <div class="for__item-img">
                         <img src="img/for/product3.jpg" alt="">
                     </div>
                 </div>
-                <div class="for__item">
+                <div class="for__item popup__show">
                     <h4>При уплощении внутреннего свода стопы</h4>
                     <div class="for__item-img">
                         <img src="img/for/product4.jpg" alt="">
                     </div>
                 </div>
-                <div class="for__item">
+                <div class="for__item popup__show">
                     <h4>При стопе с пронацией пятки</h4>
                     <div class="for__item-img">
                         <img src="img/for/product5.jpg" alt="">
                     </div>
                 </div>
-                <div class="for__item">
+                <div class="for__item popup__show">
                     <h4>При деформирующем артрозе первого плюснефалангового сустава</h4>
                     <div class="for__item-img">
                         <img src="img/for/product6.jpg" alt="">
                     </div>
                 </div>
-                <div class="for__item">
+                <div class="for__item popup__show">
                     <h4>При занятии спортом</h4>
                     <div class="for__item-img">
                         <img src="img/for/product7.jpg" alt="">
                     </div>
                 </div>
-                <div class="for__item">
+                <div class="for__item popup__show">
                     <h4>При занятии спортом</h4>
                     <div class="for__item-img">
                         <img src="img/for/product8.jpg" alt="">
                     </div>
                 </div>
-                <div class="for__item">
+                <div class="for__item popup__show">
                     <h4>При артрозе суставов переднего отдела стопы</h4>
                     <div class="for__item-img">
                         <img src="img/for/product10.jpg" alt="">
                     </div>
                 </div>
-                <div class="for__item">
+                <div class="for__item popup__show">
                     <h4>При приведении переднего отдела стопы</h4>
                     <div class="for__item-img">
                         <img src="img/for/product11.jpg" alt="">
@@ -174,7 +174,7 @@
                 </div>
             </div>
             <div class="for__btn">
-                <button class="main-btn">Записаться на прием</button>
+                <button class="main-btn popup__show">Записаться на прием</button>
             </div>
         </div>
     </section>
@@ -210,7 +210,7 @@
                     <h3>Только <span class="yellow date_today"></span></h3>
                     <span class="sale">получите скидку</span>
                     <span class="num">50%</span>
-                    <div class="main-btn">Забрать скидку</div>
+                    <div class="main-btn popup__show">Забрать скидку</div>
                 </div>
                 <div class="offer__img">
                     <img src="img/insoles-offer.png" alt="">
@@ -242,8 +242,8 @@
                     <div class="photo__item-test" style="width: 100%; min-height: 250px; background: #f8f8f8;"></div>
                 </div>
             </div>
-            <div class="button">
-                <div class="main-btn">Записаться</div>
+            <div class="button"> 
+                <div class="main-btn popup__show">Записаться</div>
             </div>
         </div>
     </section>
@@ -266,7 +266,7 @@
                 </div>
             </div>
             <div class="button">
-                <div class="main-btn">Записаться</div>
+                <div class="main-btn popup__show">Записаться</div>
             </div>
         </div>
     </section>
@@ -295,7 +295,7 @@
                 </div>
             </div>
             <div class="button">
-                <div class="main-btn">Записаться</div>
+                <div class="main-btn popup__show">Записаться</div>
             </div>
         </div>
     </section>
@@ -328,6 +328,22 @@
             </div>
         </div>
     </footer>
+
+    <div class="popup">
+        <div class="popup__close"><span></span><span></span></div>
+        <div class="popup__body">
+            <h3>Записаться на изготовление индивидуальных ортопедических стелек <span class="yellow">со скидкой 50%</span></h3>
+            <h4>Консультация ортопеда включена в стоимость</h4>
+            <form action="">
+                <label for="name">Ваше имя</label>
+                <input type="text" id="name">
+                <label for="phone">Ваш телефон</label>
+                <input type="tel" id="phone">
+                <span class="agree">Согласен на обработку персональных данных</span>
+                <button class="main-btn">Отправить</button>
+            </form>
+        </div>
+    </div>
     
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>

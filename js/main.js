@@ -42,3 +42,16 @@ function showHeader() {
 window.onscroll = function() {
     showHeader();
 };
+
+const popup = document.querySelector('.popup');
+const popupClose = document.querySelector('.popup__close');
+const popupShow = document.querySelectorAll('.popup__show');
+
+popupShow.forEach(popupShowItem => {
+  popupShowItem.addEventListener('click', () => {
+    popup.classList.add('popup-show');
+  })
+});
+popupClose.addEventListener('click', () => {
+  popup.classList.remove('popup-show');
+})

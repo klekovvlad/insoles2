@@ -98,6 +98,9 @@ h3 {
   font-size: 1.125em;
   text-transform: uppercase;
 }
+.header__mob {
+  display: none;
+}
 .header__phone {
   min-height: 100%;
   display: flex;
@@ -556,6 +559,105 @@ h3 {
 .footer__license {
   color: #d7d4df;
 }
+.popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s all linear;
+}
+.popup__body {
+  background: #fff;
+  min-width: 650px;
+  max-width: 650px;
+  padding: 50px;
+  border-radius: 10px;
+  background: #1f6134;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1001;
+}
+.popup__body h3 {
+  font-size: 1.875em;
+  margin-bottom: 10px;
+}
+.popup__body h3 span.yellow {
+  font-family: 'Oswald-Bold', sans-serif;
+}
+.popup__body h4 {
+  font-size: 1.5em;
+  margin-bottom: 50px;
+}
+.popup form label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+.popup form input {
+  color: #0c2a17;
+  display: flex;
+  align-items: center;
+  width: 360px;
+  height: 60px;
+  border-radius: 10px;
+  padding: 0px 30px;
+  border: none;
+  outline: none;
+  margin-bottom: 30px;
+}
+.popup form .main-btn {
+  margin-top: 30px;
+}
+.popup form span.agree {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+}
+.popup form span.agree:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: url(../img/icons/agree.svg) no-repeat center;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.popup__close {
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  z-index: 1001;
+  cursor: pointer;
+}
+.popup__close span {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #fff;
+  margin: 20px 0px;
+}
+.popup__close span:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+.popup__close span:nth-child(2) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+.popup-show {
+  visibility: visible;
+  opacity: 1;
+}
 @media (max-width: 900px) {
   h3 {
     font-size: 24px;
@@ -566,9 +668,12 @@ h3 {
   .container {
     max-width: 100%;
   }
+  .header {
+    overflow: hidden;
+  }
   .header__wrapper {
     padding: 20px 0px;
-    grid-template-columns: 50% 25% 25%;
+    grid-template-columns: 83% 17%;
   }
   .header__logo h3 {
     font-size: 1.125em;
@@ -595,19 +700,23 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    display: none;
   }
   .header__phone a.phone {
-    font-family: 'Oswald-Bold', sans-serif;
-    font-size: 1.25em;
+    display: block;
+    width: 40px;
+    height: 40px;
+    font-size: 0;
+    background: url(../img/icons/phone.svg) no-repeat center;
+    background-size: cover;
   }
   .header__scroll {
-    background: rgba(31, 97, 52, 0.7);
+    background: rgba(31, 97, 52, 0.9);
   }
   .header__scroll .header__wrapper {
     padding: 10px 0px;
   }
   .main {
+    overflow: hidden;
     padding: 150px 0px 50px 0px;
   }
   .main h1 {
@@ -722,6 +831,9 @@ h3 {
       transform: scale(0.95);
     }
   }
+  .adv {
+    overflow: hidden;
+  }
   .adv__wrapper {
     grid-template-columns: 1fr;
     padding-top: 0px;
@@ -747,6 +859,7 @@ h3 {
     display: none;
   }
   .for {
+    overflow: hidden;
     padding: 50px 0px;
   }
   .for__wrapper {
@@ -758,10 +871,14 @@ h3 {
     padding: 0px 10px;
   }
   .about {
+    overflow: hidden;
     padding: 50px 0px;
   }
   .about .swiper-wrapper {
     padding: 30px 0px 80px 0px;
+  }
+  .offer {
+    overflow: hidden;
   }
   .offer__text {
     flex: 0 1 100%;
@@ -787,6 +904,7 @@ h3 {
   .photo,
   .feedback,
   .video {
+    overflow: hidden;
     padding: 50px 0px;
   }
   .photo__wrapper,
@@ -825,6 +943,9 @@ h3 {
     width: 300px !important;
     height: 300px;
   }
+  .contacts {
+    overflow: hidden;
+  }
   .contacts__item {
     position: relative;
     top: 0%;
@@ -839,6 +960,9 @@ h3 {
   .contacts__item span.contacts__info {
     font-size: 1.25em;
   }
+  .footer {
+    overflow: hidden;
+  }
   .footer__wrapper {
     justify-content: center;
     flex-direction: column;
@@ -846,5 +970,45 @@ h3 {
   .footer span {
     text-align: center;
     font-size: 1em;
+  }
+  .popup__body {
+    min-width: 95%;
+    max-width: 95%;
+    padding: 30px;
+    border-radius: 4px;
+  }
+  .popup__body h3 {
+    font-size: 1.5em;
+  }
+  .popup__body h3 span.yellow {
+    display: block;
+  }
+  .popup__body h4 {
+    font-size: 1em;
+    margin-bottom: 30px;
+  }
+  .popup form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.125em;
+  }
+  .popup form input {
+    width: 100%;
+    height: 50px;
+    border-radius: 4px;
+    padding: 0px 20px;
+  }
+  .popup form .main-btn {
+    min-width: 100%;
+  }
+  .popup__close {
+    width: 50px;
+    height: 50px;
+    top: 80px;
+    right: 10px;
+  }
+  .popup-show {
+    visibility: visible;
+    opacity: 1;
   }
 }
