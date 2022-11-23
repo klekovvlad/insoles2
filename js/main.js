@@ -30,7 +30,7 @@ dateItem.innerHTML = now.toLocaleString("ru", options);
 const header = document.querySelector('.header');
 
 function showHeader() {
-    let scrollPos = 250;
+    let scrollPos = 150;
 
     if(document.body.scrollTop > scrollPos || document.documentElement.scrollTop > scrollPos) {
         header.classList.add('header__scroll');
